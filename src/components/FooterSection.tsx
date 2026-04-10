@@ -6,7 +6,7 @@ export function FooterSection() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-2">
           <BookOpen size={20} className="text-primary" />
-          <span className="font-display text-xl text-primary">PageCraft</span>
+          <span className="font-display text-xl text-primary">The American Publishing</span>
         </div>
 
         <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
@@ -18,7 +18,7 @@ export function FooterSection() {
         </div>
 
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} PageCraft. All rights reserved.
+          © {new Date().getFullYear()} The American Publishing. All rights reserved.
         </p>
       </div>
     </footer>

@@ -4,14 +4,27 @@ import { Check } from "lucide-react";
 const packages = [
   {
     name: "Starter",
-    price: "$2,999",
+    price: "$1,999",
     description: "Perfect for first-time authors with a clear manuscript idea.",
     features: [
-      "Up to 30,000 words ghostwriting",
+      "Up to 20,000 words ghostwriting",
       "2 rounds of revisions",
       "Basic cover design",
       "eBook formatting",
       "Amazon KDP publishing",
+    ],
+    highlight: false,
+  },
+  {
+    name: "Essential",
+    price: "$3,499",
+    description: "A solid foundation for authors ready to publish professionally.",
+    features: [
+      "Up to 35,000 words ghostwriting",
+      "3 rounds of revisions",
+      "Custom cover design",
+      "eBook + paperback formatting",
+      "Multi-platform publishing",
       "ISBN registration",
     ],
     highlight: false,
@@ -33,9 +46,25 @@ const packages = [
     highlight: true,
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    description: "Tailored solutions for established brands and serial authors.",
+    name: "Premium",
+    price: "$9,999",
+    description: "Comprehensive solution with advanced marketing and distribution.",
+    features: [
+      "Up to 80,000 words ghostwriting",
+      "Unlimited revisions",
+      "Premium cover & interior design",
+      "All format publishing",
+      "Global distribution",
+      "Full marketing suite",
+      "Author website setup",
+      "Social media campaign",
+    ],
+    highlight: false,
+  },
+  {
+    name: "Bestseller",
+    price: "$14,999",
+    description: "Everything you need to hit the bestseller lists.",
     features: [
       "Unlimited word count",
       "Dedicated project manager",
@@ -44,7 +73,24 @@ const packages = [
       "Global distribution",
       "Full marketing suite",
       "PR & media outreach",
-      "Ongoing consulting",
+      "Amazon bestseller strategy",
+      "Book launch event planning",
+    ],
+    highlight: false,
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    description: "Tailored solutions for established brands and serial authors.",
+    features: [
+      "Multiple book projects",
+      "Dedicated writing team",
+      "Custom branding & design",
+      "Audiobook + translation",
+      "Worldwide distribution",
+      "Ongoing marketing retainer",
+      "PR & media outreach",
+      "Consulting & strategy",
     ],
     highlight: false,
   },
@@ -67,14 +113,14 @@ export function Packages() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {packages.map((pkg, i) => (
             <motion.div
               key={pkg.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              transition={{ delay: i * 0.08 }}
               className={`relative p-8 rounded-lg border ${
                 pkg.highlight
                   ? "border-primary bg-background shadow-lg shadow-primary/10"
@@ -82,7 +128,7 @@ export function Packages() {
               }`}
             >
               {pkg.highlight && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 text-xs font-semibold gold-gradient text-primary-foreground rounded-full">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 text-xs font-semibold red-gradient text-primary-foreground rounded-full">
                   Most Popular
                 </div>
               )}
@@ -105,7 +151,7 @@ export function Packages() {
                 href="#contact"
                 className={`block text-center py-3 rounded-md font-semibold gentle-animation ${
                   pkg.highlight
-                    ? "gold-gradient text-primary-foreground hover:opacity-90"
+                    ? "red-gradient text-primary-foreground hover:opacity-90"
                     : "border border-border text-foreground hover:border-primary hover:text-primary"
                 }`}
               >

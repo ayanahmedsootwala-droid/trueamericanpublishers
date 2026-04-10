@@ -12,7 +12,6 @@ export function ContactSection() {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate form submission
     setTimeout(() => {
       toast({
         title: "Message sent!",
@@ -47,16 +46,16 @@ export function ContactSection() {
             className="lg:col-span-2 space-y-8"
           >
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-md gold-gradient flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 rounded-md red-gradient flex items-center justify-center flex-shrink-0">
                 <Mail size={18} className="text-primary-foreground" />
               </div>
               <div>
                 <h3 className="text-lg text-foreground">Email Us</h3>
-                <p className="text-muted-foreground text-sm">hello@pagecraft.com</p>
+                <p className="text-muted-foreground text-sm">hello@theamericanpublishing.com</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-md gold-gradient flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 rounded-md red-gradient flex items-center justify-center flex-shrink-0">
                 <Phone size={18} className="text-primary-foreground" />
               </div>
               <div>
@@ -65,7 +64,7 @@ export function ContactSection() {
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-md gold-gradient flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 rounded-md red-gradient flex items-center justify-center flex-shrink-0">
                 <MapPin size={18} className="text-primary-foreground" />
               </div>
               <div>
@@ -122,7 +121,7 @@ export function ContactSection() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 rounded-md gold-gradient text-primary-foreground font-semibold hover:opacity-90 gentle-animation disabled:opacity-50"
+              className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 rounded-md red-gradient text-primary-foreground font-semibold hover:opacity-90 gentle-animation disabled:opacity-50"
             >
               {loading ? "Sending..." : "Send Message"} <Send size={16} />
             </button>

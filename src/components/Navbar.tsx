@@ -18,7 +18,7 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        <a href="#" className="font-display text-2xl text-primary">PageCraft</a>
+        <a href="#" className="font-display text-2xl text-primary">The American Publishing</a>
 
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
@@ -32,7 +32,7 @@ export function Navbar() {
           ))}
           <a
             href="#contact"
-            className="text-sm font-semibold px-5 py-2 rounded-md gold-gradient text-primary-foreground hover:opacity-90 gentle-animation"
+            className="text-sm font-semibold px-5 py-2 rounded-md red-gradient text-primary-foreground hover:opacity-90 gentle-animation"
           >
             Get Started
           </a>
@@ -65,7 +65,7 @@ export function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="text-center font-semibold px-5 py-2 rounded-md gold-gradient text-primary-foreground"
+                className="text-center font-semibold px-5 py-2 rounded-md red-gradient text-primary-foreground"
               >
                 Get Started
               </a>
