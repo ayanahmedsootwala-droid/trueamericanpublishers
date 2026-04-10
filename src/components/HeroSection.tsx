@@ -4,10 +4,9 @@ import { ArrowRight, BookOpen, Star } from "lucide-react";
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
-      {/* Background glow */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-warm/10 rounded-full blur-[100px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-primary/5 rounded-full blur-[100px]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-16 items-center">
@@ -24,7 +23,7 @@ export function HeroSection() {
 
           <h1 className="text-5xl md:text-7xl leading-[1.05]">
             Your Story,{" "}
-            <span className="gold-text">Professionally</span>{" "}
+            <span className="red-text">Professionally</span>{" "}
             Crafted & Published
           </h1>
 
@@ -35,7 +34,7 @@ export function HeroSection() {
           <div className="flex flex-wrap gap-4">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md gold-gradient text-primary-foreground font-semibold hover:opacity-90 gentle-animation"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md red-gradient text-primary-foreground font-semibold hover:opacity-90 gentle-animation"
             >
               Start Your Book <ArrowRight size={18} />
             </a>
@@ -49,12 +48,12 @@ export function HeroSection() {
 
           <div className="flex items-center gap-8 pt-4 text-sm text-muted-foreground">
             <div>
-              <span className="block text-2xl font-display text-foreground">500+</span>
+              <span className="block text-2xl font-display text-foreground">600+</span>
               Books Published
             </div>
             <div className="w-px h-10 bg-border" />
             <div>
-              <span className="block text-2xl font-display text-foreground">98%</span>
+              <span className="block text-2xl font-display text-foreground">100%</span>
               Client Satisfaction
             </div>
             <div className="w-px h-10 bg-border" />
@@ -72,7 +71,6 @@ export function HeroSection() {
           className="hidden lg:flex justify-center"
         >
           <div className="relative">
-            {/* Book stack illustration */}
             <div className="relative w-80 h-[450px]">
               {[0, 1, 2].map((i) => (
                 <div
@@ -82,9 +80,9 @@ export function HeroSection() {
                     width: "220px",
                     height: "320px",
                     background: `linear-gradient(135deg, ${
-                      i === 0 ? "var(--accent-gold), var(--accent-gold-light)" :
-                      i === 1 ? "#2A2A3A, #1A1A24" :
-                      "var(--accent-warm), #C96843"
+                      i === 0 ? "#DC2626, #EF4444" :
+                      i === 1 ? "#1A1A1A, #0A0A0A" :
+                      "#B91C1C, #991B1B"
                     })`,
                     left: `${i * 35}px`,
                     top: `${i * 25}px`,

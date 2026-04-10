@@ -61,7 +61,7 @@ export function ServicesSection() {
               transition={{ delay: i * 0.1 }}
               className="group p-8 rounded-lg border border-border bg-card hover:border-primary/50 gentle-animation"
             >
-              <div className="w-12 h-12 rounded-md gold-gradient flex items-center justify-center mb-5">
+              <div className="w-12 h-12 rounded-md red-gradient flex items-center justify-center mb-5">
                 <service.icon size={22} className="text-primary-foreground" />
               </div>
               <h3 className="text-xl mb-3 text-foreground">{service.title}</h3>

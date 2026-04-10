@@ -55,11 +55,6 @@ export default {
           DEFAULT: "var(--card)",
           foreground: "var(--card-foreground)",
         },
-        gold: {
-          DEFAULT: "var(--accent-gold)",
-          light: "var(--accent-gold-light)",
-        },
-        warm: "var(--accent-warm)",
       },
       borderRadius: {
         lg: "var(--radius)",

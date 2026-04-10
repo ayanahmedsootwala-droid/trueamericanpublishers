@@ -29,11 +29,31 @@ const faqs = [
   },
   {
     q: "What if I'm not happy with the writing?",
-    a: "Your satisfaction is our priority. We offer multiple revision rounds with every package, and our Professional and Enterprise packages include unlimited revisions until you're completely satisfied.",
+    a: "Your satisfaction is our priority. We offer multiple revision rounds with every package, and our Professional and higher packages include unlimited revisions until you're completely satisfied.",
   },
   {
     q: "Do you offer payment plans?",
     a: "Yes, we offer flexible payment plans. Most packages can be split into 2-4 installments. Contact us to discuss a plan that works for your budget.",
+  },
+  {
+    q: "Do you provide book marketing services?",
+    a: "Yes! We offer comprehensive marketing services including Amazon optimization, social media campaigns, PR outreach, book launch strategies, and paid advertising management to maximize your book's visibility and sales.",
+  },
+  {
+    q: "Can you help with audiobook production?",
+    a: "Absolutely. Our Bestseller and Enterprise packages include professional audiobook production with experienced narrators, studio-quality recording, and distribution to Audible, iTunes, and other major platforms.",
+  },
+  {
+    q: "What makes The American Publishing different from other publishers?",
+    a: "With over 11 years of experience, 600+ books published, and a 100% client satisfaction rate, we offer unmatched expertise and dedication. We treat every book like our own and provide end-to-end support from concept to bestseller.",
+  },
+  {
+    q: "How do I get started?",
+    a: "Simply fill out our contact form or give us a call. We'll schedule a free consultation to discuss your book idea, recommend the best package, and create a personalized timeline for your project.",
+  },
+  {
+    q: "Is my book idea kept confidential?",
+    a: "100%. We sign strict Non-Disclosure Agreements (NDAs) before any project begins. Your ideas, manuscripts, and personal information are always kept completely confidential.",
   },
 ];
 

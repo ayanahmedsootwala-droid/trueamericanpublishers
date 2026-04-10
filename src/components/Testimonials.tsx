@@ -5,13 +5,13 @@ const testimonials = [
   {
     name: "Sarah Mitchell",
     role: "Bestselling Author",
-    text: "PageCraft turned my rough ideas into a beautifully published book. Their ghostwriting team captured my voice perfectly. I couldn't have done it without them.",
+    text: "The American Publishing turned my rough ideas into a beautifully published book. Their ghostwriting team captured my voice perfectly. I couldn't have done it without them.",
     rating: 5,
   },
   {
     name: "James Rodriguez",
     role: "Business Coach",
-    text: "The team at PageCraft handled everything — writing, design, publishing, and marketing. My book became an Amazon bestseller within the first month!",
+    text: "The team handled everything — writing, design, publishing, and marketing. My book became an Amazon bestseller within the first month!",
     rating: 5,
   },
   {
@@ -23,7 +23,31 @@ const testimonials = [
   {
     name: "Marcus Williams",
     role: "Motivational Speaker",
-    text: "From day one, the PageCraft team understood my vision. The final product exceeded all my expectations. Highly recommend their services!",
+    text: "From day one, the team understood my vision. The final product exceeded all my expectations. Highly recommend their services!",
+    rating: 5,
+  },
+  {
+    name: "Linda Foster",
+    role: "Entrepreneur & Author",
+    text: "I had tried two other publishing companies before finding The American Publishing. The difference in quality and professionalism is night and day. My book looks incredible.",
+    rating: 5,
+  },
+  {
+    name: "David Park",
+    role: "Tech Executive",
+    text: "They helped me write and publish my leadership book in under 4 months. The marketing campaign they put together drove thousands of sales in the first week.",
+    rating: 5,
+  },
+  {
+    name: "Rachel Thompson",
+    role: "Life Coach",
+    text: "The cover design alone was worth it — absolutely stunning. But the writing quality and attention to detail throughout the entire process was exceptional.",
+    rating: 5,
+  },
+  {
+    name: "Anthony Rivera",
+    role: "Fitness Author",
+    text: "I've published three books with The American Publishing now. Each one has been better than the last. They're my go-to publishing partner for life.",
     rating: 5,
   },
 ];
@@ -52,7 +76,7 @@ export function Testimonials() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              transition={{ delay: i * 0.08 }}
               className="p-8 rounded-lg border border-border bg-card"
             >
               <Quote size={28} className="text-primary/30 mb-4" />
