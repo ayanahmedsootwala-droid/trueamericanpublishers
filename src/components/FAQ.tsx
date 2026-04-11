@@ -44,7 +44,7 @@ const faqs = [
     a: "Absolutely. Our Bestseller and Enterprise packages include professional audiobook production with experienced narrators, studio-quality recording, and distribution to Audible, iTunes, and other major platforms.",
   },
   {
-    q: "What makes The American Publishing different from other publishers?",
+    q: "What makes True American Publishers different from other publishers?",
     a: "With over 11 years of experience, 600+ books published, and a 100% client satisfaction rate, we offer unmatched expertise and dedication. We treat every book like our own and provide end-to-end support from concept to bestseller.",
   },
   {
@@ -86,7 +86,7 @@ export function FAQ() {
                 value={`item-${i}`}
                 className="border border-border rounded-lg px-6 bg-background"
               >
-                <AccordionTrigger className="text-left text-sm text-foreground hover:text-primary hover:no-underline">
+                <AccordionTrigger className="text-left text-base text-foreground hover:text-primary hover:no-underline">
                   {faq.q}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed">

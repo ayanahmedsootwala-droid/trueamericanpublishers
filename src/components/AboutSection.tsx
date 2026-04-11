@@ -25,7 +25,7 @@ export function AboutSection() {
             Since 2014
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            For over 11 years, The American Publishing has been the trusted partner for aspiring and established authors alike. We've helped hundreds of writers navigate the complex world of publishing, from the first draft to the bestseller list.
+            For over 11 years, True American Publishers has been the trusted partner for aspiring and established authors alike. We've helped hundreds of writers navigate the complex world of publishing, from the first draft to the bestseller list.
           </p>
           <p className="text-muted-foreground leading-relaxed">
             Our team of experienced ghostwriters, editors, designers, and marketing specialists work collaboratively to deliver books that not only meet but exceed our clients' expectations. We believe every story deserves to be told — and told well.

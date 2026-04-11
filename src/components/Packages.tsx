@@ -3,94 +3,59 @@ import { Check } from "lucide-react";
 
 const packages = [
   {
-    name: "Starter",
-    price: "$1,999",
-    description: "Perfect for first-time authors with a clear manuscript idea.",
+    name: "Basic",
+    price: "$749",
+    originalPrice: "$2,497",
+    discount: "70% OFF",
+    description: "Everything you need to get your manuscript polished and ready.",
     features: [
-      "Up to 20,000 words ghostwriting",
-      "2 rounds of revisions",
-      "Basic cover design",
-      "eBook formatting",
-      "Amazon KDP publishing",
+      "Writing",
+      "Editing",
+      "Proofreading",
+      "Typesetting",
+      "Layout Adjustment",
+      "Formatting",
+      "100% Ownership Rights",
     ],
     highlight: false,
   },
   {
-    name: "Essential",
-    price: "$3,499",
-    description: "A solid foundation for authors ready to publish professionally.",
+    name: "Standard",
+    price: "$1,499",
+    originalPrice: "$4,997",
+    discount: "70% OFF",
+    description: "Complete package with cover design and Kindle e-book publishing.",
     features: [
-      "Up to 35,000 words ghostwriting",
-      "3 rounds of revisions",
-      "Custom cover design",
-      "eBook + paperback formatting",
-      "Multi-platform publishing",
-      "ISBN registration",
-    ],
-    highlight: false,
-  },
-  {
-    name: "Professional",
-    price: "$5,999",
-    description: "Our most popular package for serious authors ready to make an impact.",
-    features: [
-      "Up to 60,000 words ghostwriting",
-      "Unlimited revisions",
-      "Premium cover design",
-      "eBook + paperback formatting",
-      "Multi-platform publishing",
-      "ISBN registration",
-      "Book marketing campaign",
-      "Amazon optimization",
+      "Writing",
+      "Editing",
+      "Proofreading",
+      "Typesetting",
+      "Layout Adjustment",
+      "Formatting",
+      "100% Ownership Rights",
+      "Book Cover Design",
+      "Publishing on Kindle (E-book)",
     ],
     highlight: true,
   },
   {
     name: "Premium",
-    price: "$9,999",
-    description: "Comprehensive solution with advanced marketing and distribution.",
+    price: "$2,100",
+    originalPrice: "$7,000",
+    discount: "70% OFF",
+    description: "Full publishing with ISBN, Amazon & Kindle in both e-book and paperback.",
     features: [
-      "Up to 80,000 words ghostwriting",
-      "Unlimited revisions",
-      "Premium cover & interior design",
-      "All format publishing",
-      "Global distribution",
-      "Full marketing suite",
-      "Author website setup",
-      "Social media campaign",
-    ],
-    highlight: false,
-  },
-  {
-    name: "Bestseller",
-    price: "$14,999",
-    description: "Everything you need to hit the bestseller lists.",
-    features: [
-      "Unlimited word count",
-      "Dedicated project manager",
-      "Custom cover & interior design",
-      "Audiobook production",
-      "Global distribution",
-      "Full marketing suite",
-      "PR & media outreach",
-      "Amazon bestseller strategy",
-      "Book launch event planning",
-    ],
-    highlight: false,
-  },
-  {
-    name: "Enterprise",
-    price: "Custom",
-    description: "Tailored solutions for established brands and serial authors.",
-    features: [
-      "Multiple book projects",
-      "Dedicated writing team",
-      "Custom branding & design",
-      "Audiobook + translation",
-      "Worldwide distribution",
-      "Ongoing marketing retainer",
-      "PR & media outreach",
-      "Consulting & strategy",
+      "Writing",
+      "Editing",
+      "Proofreading",
+      "Typesetting",
+      "Layout Adjustment",
+      "Formatting",
+      "100% Ownership Rights",
+      "Book Cover Design",
+      "ISBN Number",
+      "Publishing on Amazon & Kindle",
+      "E-book + Paperback (2 Formats)",
     ],
     highlight: false,
   },
@@ -106,14 +71,13 @@ export function Packages() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-medium tracking-widest uppercase">Pricing</span>
-          <h2 className="mt-3 text-4xl md:text-5xl">Our Packages</h2>
+          <h2 className="text-4xl md:text-5xl">Our Packages</h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
             Transparent pricing with no hidden fees. Choose the package that fits your vision.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {packages.map((pkg, i) => (
             <motion.div
               key={pkg.name}
@@ -133,9 +97,13 @@ export function Packages() {
                 </div>
               )}
               <h3 className="text-2xl text-foreground">{pkg.name}</h3>
-              <div className="mt-4 mb-2">
+              <div className="mt-4 mb-1 flex items-baseline gap-3">
                 <span className="text-4xl font-display text-foreground">{pkg.price}</span>
+                <span className="text-lg text-muted-foreground line-through">{pkg.originalPrice}</span>
               </div>
+              <span className="inline-block px-2 py-0.5 text-xs font-bold text-primary bg-primary/10 rounded mb-6">
+                {pkg.discount}
+              </span>
               <p className="text-sm text-muted-foreground mb-8">{pkg.description}</p>
 
               <ul className="space-y-3 mb-8">
