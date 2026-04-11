@@ -1,14 +1,22 @@
 import { motion } from "framer-motion";
+import bookMidnightGarden from "@/assets/book-midnight-garden.jpg";
+import bookEchoesTomorrow from "@/assets/book-echoes-tomorrow.jpg";
+import bookLastCompass from "@/assets/book-last-compass.jpg";
+import bookQuietStrength from "@/assets/book-quiet-strength.jpg";
+import bookEmpireAshes from "@/assets/book-empire-ashes.jpg";
+import bookStillWaters from "@/assets/book-still-waters.jpg";
+import bookSpiceRoute from "@/assets/book-spice-route.jpg";
+import bookWiredMore from "@/assets/book-wired-more.jpg";
 
 const books = [
-  { title: "Atomic Habits", author: "James Clear", color: "from-[#F5F0E0] to-[#E8DFC8]", textColor: "text-gray-900" },
-  { title: "The 48 Laws of Power", author: "Robert Greene", color: "from-[#1a1a1a] to-[#2d2d2d]", textColor: "text-white" },
-  { title: "Think and Grow Rich", author: "Napoleon Hill", color: "from-[#8B0000] to-[#B22222]", textColor: "text-white" },
-  { title: "Rich Dad Poor Dad", author: "Robert Kiyosaki", color: "from-[#4B0082] to-[#6A0DAD]", textColor: "text-white" },
-  { title: "The Alchemist", author: "Paulo Coelho", color: "from-[#C4A35A] to-[#D4B56A]", textColor: "text-gray-900" },
-  { title: "Becoming", author: "Michelle Obama", color: "from-[#1B3A5C] to-[#2A4F7A]", textColor: "text-white" },
-  { title: "Educated", author: "Tara Westover", color: "from-[#2F4F4F] to-[#3D6363]", textColor: "text-white" },
-  { title: "The Subtle Art", author: "Mark Manson", color: "from-[#FF6B35] to-[#FF8C5A]", textColor: "text-white" },
+  { title: "The Midnight Garden", genre: "Gothic Mystery", cover: bookMidnightGarden },
+  { title: "Echoes of Tomorrow", genre: "Sci-Fi", cover: bookEchoesTomorrow },
+  { title: "The Last Compass", genre: "Adventure Memoir", cover: bookLastCompass },
+  { title: "Quiet Strength", genre: "Self-Help", cover: bookQuietStrength },
+  { title: "Empire of Ashes", genre: "Historical Fiction", cover: bookEmpireAshes },
+  { title: "Beneath Still Waters", genre: "Thriller", cover: bookStillWaters },
+  { title: "The Spice Route", genre: "Culinary Memoir", cover: bookSpiceRoute },
+  { title: "Wired for More", genre: "Business & Tech", cover: bookWiredMore },
 ];
 
 export function BookCovers() {
@@ -24,7 +32,7 @@ export function BookCovers() {
           <span className="text-primary text-sm font-medium tracking-widest uppercase">Our Work</span>
           <h2 className="mt-3 text-4xl md:text-5xl">Featured Book Covers</h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            A glimpse of the bestselling books we've helped bring to life.
+            A glimpse of the books we've helped bring to life across every genre.
           </p>
         </motion.div>
 
@@ -38,17 +46,21 @@ export function BookCovers() {
               transition={{ delay: i * 0.08 }}
               className="group cursor-pointer"
             >
-              <div
-                className={`relative aspect-[2/3] rounded-lg bg-gradient-to-br ${book.color} overflow-hidden shadow-xl group-hover:shadow-2xl group-hover:shadow-primary/20 group-hover:scale-[1.02] gentle-animation`}
-              >
-                <div className="absolute inset-0 p-5 flex flex-col justify-between">
-                  <div className="w-10 h-0.5 bg-current opacity-30" />
+              <div className="relative aspect-[2/3] rounded-lg overflow-hidden shadow-xl group-hover:shadow-2xl group-hover:shadow-primary/20 group-hover:scale-[1.02] gentle-animation">
+                <img
+                  src={book.cover}
+                  alt={`${book.title} book cover`}
+                  loading="lazy"
+                  width={512}
+                  height={768}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 gentle-animation flex items-end p-4">
                   <div>
-                    <h3 className={`font-display text-lg md:text-xl ${book.textColor}`}>{book.title}</h3>
-                    <p className={`text-xs mt-1 opacity-60 ${book.textColor}`}>{book.author}</p>
+                    <h3 className="font-display text-lg text-white">{book.title}</h3>
+                    <p className="text-xs text-white/70">{book.genre}</p>
                   </div>
                 </div>
-                <div className="absolute left-0 top-0 bottom-0 w-2 bg-black/20" />
               </div>
             </motion.div>
           ))}
