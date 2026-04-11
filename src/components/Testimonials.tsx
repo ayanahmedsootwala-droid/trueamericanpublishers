@@ -5,7 +5,7 @@ const testimonials = [
   {
     name: "Sarah Mitchell",
     role: "Bestselling Author",
-    text: "The American Publishing turned my rough ideas into a beautifully published book. Their ghostwriting team captured my voice perfectly. I couldn't have done it without them.",
+    text: "True American Publishers turned my rough ideas into a beautifully published book. Their ghostwriting team captured my voice perfectly. I couldn't have done it without them.",
     rating: 5,
   },
   {
@@ -29,7 +29,7 @@ const testimonials = [
   {
     name: "Linda Foster",
     role: "Entrepreneur & Author",
-    text: "I had tried two other publishing companies before finding The American Publishing. The difference in quality and professionalism is night and day. My book looks incredible.",
+    text: "I had tried two other publishing companies before finding True American Publishers. The difference in quality and professionalism is night and day. My book looks incredible.",
     rating: 5,
   },
   {
@@ -47,7 +47,7 @@ const testimonials = [
   {
     name: "Anthony Rivera",
     role: "Fitness Author",
-    text: "I've published three books with The American Publishing now. Each one has been better than the last. They're my go-to publishing partner for life.",
+    text: "I've published three books with True American Publishers now. Each one has been better than the last. They're my go-to publishing partner for life.",
     rating: 5,
   },
 ];
