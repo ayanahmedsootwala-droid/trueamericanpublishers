@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, BookOpen, Star } from "lucide-react";
+import heroBooks from "@/assets/hero-books.jpg";
 
 export function HeroSection() {
   return (
@@ -71,35 +72,13 @@ export function HeroSection() {
           className="hidden lg:flex justify-center"
         >
           <div className="relative">
-            <div className="relative w-80 h-[450px]">
-              {[0, 1, 2].map((i) => (
-                <div
-                  key={i}
-                  className="absolute rounded-lg shadow-2xl"
-                  style={{
-                    width: "220px",
-                    height: "320px",
-                    background: `linear-gradient(135deg, ${
-                      i === 0 ? "#DC2626, #EF4444" :
-                      i === 1 ? "#1A1A1A, #0A0A0A" :
-                      "#B91C1C, #991B1B"
-                    })`,
-                    left: `${i * 35}px`,
-                    top: `${i * 25}px`,
-                    transform: `rotate(${i === 0 ? -6 : i === 1 ? 0 : 5}deg)`,
-                    zIndex: 3 - i,
-                  }}
-                >
-                  <div className="p-6 h-full flex flex-col justify-between">
-                    <div className="w-16 h-1 bg-white/30 rounded" />
-                    <div className="space-y-2">
-                      <div className="w-32 h-1.5 bg-white/40 rounded" />
-                      <div className="w-24 h-1 bg-white/20 rounded" />
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <img
+              src={heroBooks}
+              alt="Books published by True American Publishers"
+              width={800}
+              height={900}
+              className="w-full max-w-lg rounded-2xl shadow-2xl shadow-primary/10"
+            />
           </div>
         </motion.div>
       </div>
