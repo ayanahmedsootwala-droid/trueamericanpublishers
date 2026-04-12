@@ -71,6 +71,7 @@ export function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.06 }}
+              whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.3 } }}
               className="group p-6 rounded-lg border border-border bg-card hover:border-primary/50 gentle-animation relative overflow-hidden"
             >
               <div className="absolute inset-0 red-gradient opacity-0 group-hover:opacity-[0.03] gentle-animation" />

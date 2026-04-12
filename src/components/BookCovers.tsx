@@ -49,10 +49,18 @@ export function BookCovers() {
             className="w-full"
           >
             <CarouselContent className="-ml-4">
-              {books.map((book) => (
+              {books.map((book, i) => (
                 <CarouselItem key={book.title} className="pl-4 basis-1/2 md:basis-1/4">
-                  <div className="group cursor-pointer">
-                    <div className="relative aspect-[2/3] rounded-lg overflow-hidden shadow-xl group-hover:shadow-2xl group-hover:shadow-primary/20 group-hover:scale-[1.02] gentle-animation">
+                  <motion.div
+                    className="group cursor-pointer"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.05 }}
+                    whileHover={{ y: -10, rotateY: 5, transition: { duration: 0.3 } }}
+                    style={{ perspective: 800 }}
+                  >
+                    <div className="relative aspect-[2/3] rounded-lg overflow-hidden shadow-xl group-hover:shadow-2xl group-hover:shadow-primary/30 gentle-animation">
                       <img
                         src={book.cover}
                         alt={`${book.title} book cover`}
@@ -61,14 +69,15 @@ export function BookCovers() {
                         height={768}
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 gentle-animation flex items-end p-4">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 gentle-animation flex items-end p-4">
                         <div>
                           <h3 className="font-display text-lg text-white">{book.title}</h3>
                           <p className="text-xs text-white/70">{book.genre}</p>
                         </div>
                       </div>
+                      <div className="absolute inset-0 border border-primary/0 group-hover:border-primary/30 rounded-lg gentle-animation" />
                     </div>
-                  </div>
+                  </motion.div>
                 </CarouselItem>
               ))}
             </CarouselContent>
