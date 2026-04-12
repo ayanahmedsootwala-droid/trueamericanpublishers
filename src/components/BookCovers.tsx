@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import Autoplay from "embla-carousel-autoplay";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import bookMidnightGarden from "@/assets/book-midnight-garden.jpg";
 import bookEchoesTomorrow from "@/assets/book-echoes-tomorrow.jpg";
 import bookLastCompass from "@/assets/book-last-compass.jpg";
@@ -7,6 +9,8 @@ import bookEmpireAshes from "@/assets/book-empire-ashes.jpg";
 import bookStillWaters from "@/assets/book-still-waters.jpg";
 import bookSpiceRoute from "@/assets/book-spice-route.jpg";
 import bookWiredMore from "@/assets/book-wired-more.jpg";
+import bookCrimsonHorizon from "@/assets/book-crimson-horizon.jpg";
+import bookVelvetThread from "@/assets/book-velvet-thread.jpg";
 
 const books = [
   { title: "The Midnight Garden", genre: "Gothic Mystery", cover: bookMidnightGarden },
@@ -17,6 +21,8 @@ const books = [
   { title: "Beneath Still Waters", genre: "Thriller", cover: bookStillWaters },
   { title: "The Spice Route", genre: "Culinary Memoir", cover: bookSpiceRoute },
   { title: "Wired for More", genre: "Business & Tech", cover: bookWiredMore },
+  { title: "Crimson Horizon", genre: "Dystopian Thriller", cover: bookCrimsonHorizon },
+  { title: "The Velvet Thread", genre: "Literary Romance", cover: bookVelvetThread },
 ];
 
 export function BookCovers() {
@@ -36,34 +42,39 @@ export function BookCovers() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {books.map((book, i) => (
-            <motion.div
-              key={book.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="group cursor-pointer"
-            >
-              <div className="relative aspect-[2/3] rounded-lg overflow-hidden shadow-xl group-hover:shadow-2xl group-hover:shadow-primary/20 group-hover:scale-[1.02] gentle-animation">
-                <img
-                  src={book.cover}
-                  alt={`${book.title} book cover`}
-                  loading="lazy"
-                  width={512}
-                  height={768}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 gentle-animation flex items-end p-4">
-                  <div>
-                    <h3 className="font-display text-lg text-white">{book.title}</h3>
-                    <p className="text-xs text-white/70">{book.genre}</p>
+        <div className="px-12">
+          <Carousel
+            opts={{ align: "start", loop: true }}
+            plugins={[Autoplay({ delay: 4000, stopOnInteraction: false })]}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {books.map((book) => (
+                <CarouselItem key={book.title} className="pl-4 basis-1/2 md:basis-1/4">
+                  <div className="group cursor-pointer">
+                    <div className="relative aspect-[2/3] rounded-lg overflow-hidden shadow-xl group-hover:shadow-2xl group-hover:shadow-primary/20 group-hover:scale-[1.02] gentle-animation">
+                      <img
+                        src={book.cover}
+                        alt={`${book.title} book cover`}
+                        loading="lazy"
+                        width={512}
+                        height={768}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 gentle-animation flex items-end p-4">
+                        <div>
+                          <h3 className="font-display text-lg text-white">{book.title}</h3>
+                          <p className="text-xs text-white/70">{book.genre}</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="border-border text-foreground hover:bg-primary hover:text-primary-foreground" />
+            <CarouselNext className="border-border text-foreground hover:bg-primary hover:text-primary-foreground" />
+          </Carousel>
         </div>
       </div>
     </section>

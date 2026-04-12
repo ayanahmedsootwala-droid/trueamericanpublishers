@@ -1,6 +1,8 @@
 import { Navbar } from './components/Navbar'
 import { HeroSection } from './components/HeroSection'
+import { StatsBar } from './components/StatsBar'
 import { ServicesSection } from './components/ServicesSection'
+import { ProcessSection } from './components/ProcessSection'
 import { AboutSection } from './components/AboutSection'
 import { BookCovers } from './components/BookCovers'
 import { Packages } from './components/Packages'
@@ -16,7 +18,9 @@ export default function App() {
       <Navbar />
       <main>
         <HeroSection />
+        <StatsBar />
         <ServicesSection />
+        <ProcessSection />
         <AboutSection />
         <BookCovers />
         <Packages />
