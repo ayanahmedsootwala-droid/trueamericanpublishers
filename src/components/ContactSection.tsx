@@ -51,7 +51,7 @@ export function ContactSection() {
               </div>
               <div>
                 <h3 className="text-lg text-foreground">Email Us</h3>
-                <p className="text-muted-foreground text-sm">contact@thewaytoamericanpublishers.com</p>
+                <p className="text-muted-foreground text-sm">contact@trueamericanpublishers.com</p>
               </div>
             </div>
             <div className="flex items-start gap-4">

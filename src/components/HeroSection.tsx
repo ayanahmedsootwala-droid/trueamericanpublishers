@@ -29,7 +29,7 @@ export function HeroSection() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
-        className="relative z-10 flex flex-col items-center pt-8 pb-4"
+        className="relative z-10 flex flex-col items-center pt-10 pb-2"
       >
         <img
           src={logoMain}
@@ -41,7 +41,7 @@ export function HeroSection() {
         </h2>
       </motion.div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 grid lg:grid-cols-2 gap-16 items-center flex-1">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 lg:py-24 grid lg:grid-cols-2 gap-16 items-center flex-1">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

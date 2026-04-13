@@ -1,4 +1,3 @@
-import logo from "@/assets/logo.png";
 import logoMain from "@/assets/logo-main.png";
 import { BookOpen, Mail, Phone, MapPin, CreditCard } from "lucide-react";
 
@@ -13,7 +12,7 @@ export function FooterSection() {
           {/* Brand */}
           <div className="md:col-span-1 space-y-4">
             <div className="flex items-center gap-3">
-              <img src={logo} alt="True American Publishers" className="h-12 w-auto" />
+              <img src={logoMain} alt="True American Publishers" className="h-14 w-auto object-contain" />
               <div>
                 <span className="font-display text-lg text-foreground leading-none">True American</span>
                 <span className="block text-primary text-[10px] font-semibold tracking-[0.3em] uppercase">Publishers</span>
@@ -22,7 +21,6 @@ export function FooterSection() {
             <p className="text-sm text-muted-foreground leading-relaxed">
               Transforming stories into bestselling books for over 11 years. Your trusted partner in publishing excellence.
             </p>
-            <img src={logoMain} alt="True American Publishers Logo" className="w-16 h-16 object-contain opacity-60" />
           </div>
 
           {/* Quick Links */}
@@ -53,8 +51,8 @@ export function FooterSection() {
           <div>
             <h4 className="text-foreground font-semibold mb-4 text-sm tracking-wider uppercase">Contact Us</h4>
             <div className="flex flex-col gap-3">
-              <a href="mailto:contact@thewaytoamericanpublishers.com" className="text-sm text-muted-foreground hover:text-primary gentle-animation flex items-center gap-2">
-                <Mail size={14} className="text-primary" /> contact@thewaytoamericanpublishers.com
+              <a href="mailto:contact@trueamericanpublishers.com" className="text-sm text-muted-foreground hover:text-primary gentle-animation flex items-center gap-2">
+                <Mail size={14} className="text-primary" /> contact@trueamericanpublishers.com
               </a>
               <span className="text-sm text-muted-foreground flex items-center gap-2">
                 <Phone size={14} className="text-primary" /> +1 (555) 123-4567
@@ -68,18 +66,25 @@ export function FooterSection() {
 
         {/* Payment Partners */}
         <div className="border-t border-border pt-8 mb-8">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col items-center gap-4">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <CreditCard size={16} className="text-primary" />
               <span className="font-medium">Accepted Payment Methods</span>
             </div>
-            <div className="flex items-center gap-3 flex-wrap justify-center">
-              {["Visa", "Mastercard", "PayPal", "Amex", "Discover"].map((name) => (
+            <div className="flex items-center gap-4 flex-wrap justify-center">
+              {[
+                { name: "Visa", bg: "from-[#1a1f71] to-[#2a3f9f]", text: "VISA", font: "italic font-bold text-base" },
+                { name: "Mastercard", bg: "from-[#eb001b] to-[#f79e1b]", text: "MC", font: "font-bold text-base" },
+                { name: "PayPal", bg: "from-[#003087] to-[#009cde]", text: "PayPal", font: "font-semibold text-xs" },
+                { name: "Amex", bg: "from-[#006fcf] to-[#0097d5]", text: "AMEX", font: "font-bold text-xs" },
+                { name: "Discover", bg: "from-[#ff6000] to-[#ff8c00]", text: "DISCOVER", font: "font-bold text-[10px]" },
+              ].map((card) => (
                 <div
-                  key={name}
-                  className="px-4 py-2 rounded-md bg-card border border-border text-xs font-semibold text-foreground tracking-wide"
+                  key={card.name}
+                  className={`w-16 h-10 rounded-md bg-gradient-to-br ${card.bg} flex items-center justify-center shadow-md`}
+                  title={card.name}
                 >
-                  {name}
+                  <span className={`text-white ${card.font} select-none`}>{card.text}</span>
                 </div>
               ))}
             </div>
