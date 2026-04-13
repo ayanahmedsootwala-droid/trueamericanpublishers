@@ -5,24 +5,24 @@ import bookMidnightGarden from "@/assets/book-midnight-garden.jpg";
 import bookEchoesTomorrow from "@/assets/book-echoes-tomorrow.jpg";
 import bookLastCompass from "@/assets/book-last-compass.jpg";
 import bookQuietStrength from "@/assets/book-quiet-strength.jpg";
-import bookEmpireAshes from "@/assets/book-empire-ashes.jpg";
 import bookStillWaters from "@/assets/book-still-waters.jpg";
 import bookSpiceRoute from "@/assets/book-spice-route.jpg";
 import bookWiredMore from "@/assets/book-wired-more.jpg";
 import bookCrimsonHorizon from "@/assets/book-crimson-horizon.jpg";
-import bookVelvetThread from "@/assets/book-velvet-thread.jpg";
+import bookBigDeal from "@/assets/book-big-deal.jpg";
+import bookPersonalFinanceTeens from "@/assets/book-personal-finance-teens.jpg";
 
 const books = [
   { title: "The Midnight Garden", genre: "Gothic Mystery", cover: bookMidnightGarden },
   { title: "Echoes of Tomorrow", genre: "Sci-Fi", cover: bookEchoesTomorrow },
   { title: "The Last Compass", genre: "Adventure Memoir", cover: bookLastCompass },
   { title: "Quiet Strength", genre: "Self-Help", cover: bookQuietStrength },
-  { title: "Empire of Ashes", genre: "Historical Fiction", cover: bookEmpireAshes },
+  { title: "Big Deal", genre: "Finance & Investment", cover: bookBigDeal },
   { title: "Beneath Still Waters", genre: "Thriller", cover: bookStillWaters },
   { title: "The Spice Route", genre: "Culinary Memoir", cover: bookSpiceRoute },
   { title: "Wired for More", genre: "Business & Tech", cover: bookWiredMore },
   { title: "Crimson Horizon", genre: "Dystopian Thriller", cover: bookCrimsonHorizon },
-  { title: "The Velvet Thread", genre: "Literary Romance", cover: bookVelvetThread },
+  { title: "Personal Finance for Teens", genre: "Young Adult Finance", cover: bookPersonalFinanceTeens },
 ];
 
 export function BookCovers() {

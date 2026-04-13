@@ -15,6 +15,14 @@ const navLinks = [
 export function Navbar() {
   const [open, setOpen] = useState(false);
 
+  const handleNavClick = (href: string) => {
+    setOpen(false);
+    const el = document.querySelector(href);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
@@ -62,16 +70,22 @@ export function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="text-foreground hover:text-primary gentle-animation"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(link.href);
+                  }}
+                  className="text-foreground hover:text-primary gentle-animation py-2"
                 >
                   {link.label}
                 </a>
               ))}
               <a
                 href="#contact"
-                onClick={() => setOpen(false)}
-                className="text-center font-semibold px-5 py-2 rounded-md red-gradient text-primary-foreground"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick("#contact");
+                }}
+                className="text-center font-semibold px-5 py-3 rounded-md red-gradient text-primary-foreground"
               >
                 Get Started
               </a>

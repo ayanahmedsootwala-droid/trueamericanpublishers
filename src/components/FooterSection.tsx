@@ -1,5 +1,6 @@
 import logo from "@/assets/logo.png";
-import { BookOpen, Mail, Phone, MapPin } from "lucide-react";
+import logoMain from "@/assets/logo-main.png";
+import { BookOpen, Mail, Phone, MapPin, CreditCard } from "lucide-react";
 
 export function FooterSection() {
   return (
@@ -21,6 +22,7 @@ export function FooterSection() {
             <p className="text-sm text-muted-foreground leading-relaxed">
               Transforming stories into bestselling books for over 11 years. Your trusted partner in publishing excellence.
             </p>
+            <img src={logoMain} alt="True American Publishers Logo" className="w-16 h-16 object-contain opacity-60" />
           </div>
 
           {/* Quick Links */}
@@ -51,8 +53,8 @@ export function FooterSection() {
           <div>
             <h4 className="text-foreground font-semibold mb-4 text-sm tracking-wider uppercase">Contact Us</h4>
             <div className="flex flex-col gap-3">
-              <a href="mailto:hello@theamericanpublishing.com" className="text-sm text-muted-foreground hover:text-primary gentle-animation flex items-center gap-2">
-                <Mail size={14} className="text-primary" /> hello@theamericanpublishing.com
+              <a href="mailto:contact@thewaytoamericanpublishers.com" className="text-sm text-muted-foreground hover:text-primary gentle-animation flex items-center gap-2">
+                <Mail size={14} className="text-primary" /> contact@thewaytoamericanpublishers.com
               </a>
               <span className="text-sm text-muted-foreground flex items-center gap-2">
                 <Phone size={14} className="text-primary" /> +1 (555) 123-4567
@@ -60,6 +62,26 @@ export function FooterSection() {
               <span className="text-sm text-muted-foreground flex items-center gap-2">
                 <MapPin size={14} className="text-primary" /> New York, NY
               </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Payment Partners */}
+        <div className="border-t border-border pt-8 mb-8">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <CreditCard size={16} className="text-primary" />
+              <span className="font-medium">Accepted Payment Methods</span>
+            </div>
+            <div className="flex items-center gap-3 flex-wrap justify-center">
+              {["Visa", "Mastercard", "PayPal", "Amex", "Discover"].map((name) => (
+                <div
+                  key={name}
+                  className="px-4 py-2 rounded-md bg-card border border-border text-xs font-semibold text-foreground tracking-wide"
+                >
+                  {name}
+                </div>
+              ))}
             </div>
           </div>
         </div>
