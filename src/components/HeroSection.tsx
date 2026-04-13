@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, BookOpen, Star } from "lucide-react";
 import { useRef } from "react";
 import heroBooks from "@/assets/hero-books.jpg";
+import logoMain from "@/assets/logo-main.png";
 
 export function HeroSection() {
   const ref = useRef<HTMLElement>(null);
@@ -12,7 +13,7 @@ export function HeroSection() {
   const imageRotate = useTransform(scrollYProgress, [0, 1], [0, 3]);
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center pt-16 overflow-hidden">
+    <section ref={ref} className="relative min-h-screen flex flex-col pt-20 overflow-hidden">
       <motion.div className="absolute inset-0" style={{ y: bgY }}>
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-primary/5 rounded-full blur-[100px]" />
@@ -23,7 +24,24 @@ export function HeroSection() {
         />
       </motion.div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-16 items-center">
+      {/* Prominent Logo Under Navbar */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+        className="relative z-10 flex flex-col items-center pt-8 pb-4"
+      >
+        <img
+          src={logoMain}
+          alt="True American Publishers"
+          className="w-28 h-28 md:w-36 md:h-36 object-contain drop-shadow-2xl"
+        />
+        <h2 className="mt-3 font-display text-2xl md:text-3xl text-foreground tracking-wide">
+          True American <span className="red-text">Publishers</span>
+        </h2>
+      </motion.div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 grid lg:grid-cols-2 gap-16 items-center flex-1">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -67,25 +85,6 @@ export function HeroSection() {
               <BookOpen size={18} /> View Our Work
             </motion.a>
           </div>
-
-          <div className="flex items-center gap-8 pt-4 text-sm text-muted-foreground">
-            {[
-              { val: "600+", label: "Books Published" },
-              { val: "100%", label: "Client Satisfaction" },
-              { val: "11+", label: "Years Experience" },
-            ].map((s, i) => (
-              <motion.div
-                key={s.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1 + i * 0.15 }}
-              >
-                <span className="block text-2xl font-display text-foreground">{s.val}</span>
-                {s.label}
-                {i < 2 && <div className="hidden" />}
-              </motion.div>
-            ))}
-          </div>
         </motion.div>
 
         <motion.div
@@ -100,7 +99,7 @@ export function HeroSection() {
           >
             <img
               src={heroBooks}
-              alt="Books published by True American Publishers"
+              alt="Books published by True American Publishers on devices"
               width={800}
               height={900}
               className="w-full max-w-lg rounded-2xl shadow-2xl shadow-primary/10"
@@ -109,18 +108,6 @@ export function HeroSection() {
           </motion.div>
         </motion.div>
       </div>
-
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center"
-      >
-        <motion.div
-          animate={{ y: [0, 12, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="w-1.5 h-1.5 bg-primary rounded-full mt-2"
-        />
-      </motion.div>
     </section>
   );
 }

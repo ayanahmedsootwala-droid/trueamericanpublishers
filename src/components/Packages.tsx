@@ -152,7 +152,7 @@ export function Packages() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-medium tracking-widest uppercase">Packages</span>
+          <span className="text-primary text-sm font-medium tracking-widest uppercase">Our Packages</span>
           <h2 className="mt-3 text-4xl md:text-5xl">Our Packages</h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
             Transparent pricing with no hidden fees. Choose the package that fits your vision.

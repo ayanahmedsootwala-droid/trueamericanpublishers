@@ -3,6 +3,7 @@ import { HeroSection } from './components/HeroSection'
 import { StatsBar } from './components/StatsBar'
 import { ServicesSection } from './components/ServicesSection'
 import { ProcessSection } from './components/ProcessSection'
+import { BookFormats } from './components/BookFormats'
 import { AboutSection } from './components/AboutSection'
 import { BookCovers } from './components/BookCovers'
 import { Packages } from './components/Packages'
@@ -21,6 +22,7 @@ export default function App() {
         <StatsBar />
         <ServicesSection />
         <ProcessSection />
+        <BookFormats />
         <AboutSection />
         <BookCovers />
         <Packages />
