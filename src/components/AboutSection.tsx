@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Award, Users, BookOpen, Clock, CheckCircle } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logoMain from "@/assets/logo-main.png";
 
 const stats = [
   { icon: BookOpen, value: "600+", label: "Books Published" },
@@ -81,7 +81,7 @@ export function AboutSection() {
           </div>
 
           <div className="p-6 rounded-lg border border-border bg-background flex items-center gap-4">
-            <img src={logo} alt="True American Publishers" className="h-16 w-auto" />
+            <img src={logoMain} alt="True American Publishers" className="h-16 w-auto" />
             <div>
               <h3 className="text-lg text-foreground">True American Publishers</h3>
               <p className="text-sm text-muted-foreground">Trusted by 450+ authors across 50+ genres worldwide.</p>
