@@ -6,6 +6,7 @@ import { ProcessSection } from './components/ProcessSection'
 import { BookFormats } from './components/BookFormats'
 import { AboutSection } from './components/AboutSection'
 import { BookCovers } from './components/BookCovers'
+import { BookShowcase } from './components/BookShowcase'
 import { Packages } from './components/Packages'
 import { Testimonials } from './components/Testimonials'
 import { FAQ } from './components/FAQ'
@@ -25,6 +26,7 @@ export default function App() {
         <BookFormats />
         <AboutSection />
         <BookCovers />
+        <BookShowcase />
         <Packages />
         <Testimonials />
         <FAQ />

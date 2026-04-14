@@ -1,19 +1,29 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, BookOpen, Star } from "lucide-react";
+import { ArrowRight, BookOpen, Star, Sparkles } from "lucide-react";
 import { useRef } from "react";
-import heroBooks from "@/assets/hero-books.jpg";
 import logoMain from "@/assets/logo-main.png";
+import bookMidnight from "@/assets/book-midnight-garden.jpg";
+import bookEchoes from "@/assets/book-echoes-tomorrow.jpg";
+import bookManSoldTime from "@/assets/book-man-sold-time.jpg";
+import bookSilentMillions from "@/assets/book-silent-millions.jpg";
+import bookCrimson from "@/assets/book-crimson-horizon.jpg";
+
+const heroBooks = [
+  { src: bookEchoes, title: "Echoes of Tomorrow", rotate: -12, x: -60, delay: 0.2 },
+  { src: bookMidnight, title: "The Midnight Garden", rotate: -6, x: -30, delay: 0.3 },
+  { src: bookManSoldTime, title: "The Man Who Sold Time", rotate: 0, x: 0, delay: 0.4, featured: true },
+  { src: bookSilentMillions, title: "Silent Millions", rotate: 6, x: 30, delay: 0.5 },
+  { src: bookCrimson, title: "Crimson Horizon", rotate: 12, x: 60, delay: 0.6 },
+];
 
 export function HeroSection() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
-  const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
-  const imageRotate = useTransform(scrollYProgress, [0, 1], [0, 3]);
 
   return (
     <section ref={ref} className="relative min-h-screen flex flex-col pt-20 overflow-hidden">
+      {/* Animated background */}
       <motion.div className="absolute inset-0" style={{ y: bgY }}>
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-primary/5 rounded-full blur-[100px]" />
@@ -24,7 +34,26 @@ export function HeroSection() {
         />
       </motion.div>
 
-      {/* Prominent Logo Under Navbar */}
+      {/* Floating sparkle decorations */}
+      {[
+        { top: "15%", left: "10%", size: 12, delay: 0 },
+        { top: "25%", right: "15%", size: 16, delay: 1.5 },
+        { top: "60%", left: "5%", size: 10, delay: 3 },
+        { top: "70%", right: "8%", size: 14, delay: 2 },
+        { top: "40%", left: "20%", size: 8, delay: 4 },
+      ].map((spark, i) => (
+        <motion.div
+          key={i}
+          className="absolute z-10 text-primary/30"
+          style={{ top: spark.top, left: spark.left, right: spark.right }}
+          animate={{ opacity: [0.2, 0.6, 0.2], scale: [0.8, 1.2, 0.8], rotate: [0, 180, 360] }}
+          transition={{ duration: 4, repeat: Infinity, delay: spark.delay, ease: "easeInOut" }}
+        >
+          <Sparkles size={spark.size} />
+        </motion.div>
+      ))}
+
+      {/* Logo under navbar */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -41,17 +70,17 @@ export function HeroSection() {
         </h2>
       </motion.div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 lg:py-24 grid lg:grid-cols-2 gap-16 items-center flex-1">
+      {/* Centered hero content */}
+      <div className="relative z-10 max-w-5xl mx-auto px-6 py-16 lg:py-20 text-center flex-1 flex flex-col items-center justify-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          style={{ y: textY }}
           className="space-y-8"
         >
           <motion.div
-            className="flex items-center gap-2 text-primary text-sm font-medium"
-            whileHover={{ x: 5 }}
+            className="flex items-center justify-center gap-2 text-primary text-sm font-medium"
+            whileHover={{ scale: 1.05 }}
           >
             <Star size={16} className="fill-primary" />
             <span>11+ Years of Publishing Excellence</span>
@@ -63,11 +92,11 @@ export function HeroSection() {
             Crafted & Published
           </h1>
 
-          <p className="text-lg text-muted-foreground max-w-lg">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             From ghostwriting to publishing to marketing — we transform your ideas into bestselling books that captivate readers worldwide.
           </p>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 justify-center">
             <motion.a
               href="#contact"
               whileHover={{ scale: 1.05 }}
@@ -87,25 +116,39 @@ export function HeroSection() {
           </div>
         </motion.div>
 
+        {/* Fan-spread book showcase */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="hidden lg:flex justify-center"
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="mt-16 flex items-end justify-center gap-[-8px] relative"
+          style={{ perspective: 1200 }}
         >
-          <motion.div
-            className="relative"
-            style={{ scale: imageScale, rotate: imageRotate }}
-          >
-            <img
-              src={heroBooks}
-              alt="Books published by True American Publishers on devices"
-              width={800}
-              height={900}
-              className="w-full max-w-lg rounded-2xl shadow-2xl shadow-primary/10"
-            />
-            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-primary/20 via-transparent to-primary/10 -z-10 blur-sm" />
-          </motion.div>
+          {heroBooks.map((book, i) => (
+            <motion.div
+              key={book.title}
+              initial={{ opacity: 0, y: 40, rotate: book.rotate }}
+              animate={{ opacity: 1, y: 0, rotate: book.rotate }}
+              transition={{ duration: 0.6, delay: book.delay }}
+              whileHover={{ y: -20, rotate: 0, scale: 1.1, zIndex: 10, transition: { duration: 0.3 } }}
+              className="relative cursor-pointer"
+              style={{
+                marginLeft: i === 0 ? 0 : "-20px",
+                zIndex: book.featured ? 5 : i,
+              }}
+            >
+              <div className={`relative overflow-hidden rounded-lg shadow-2xl ${book.featured ? "shadow-primary/20" : ""}`}>
+                <img
+                  src={book.src}
+                  alt={book.title}
+                  className={`object-cover ${book.featured ? "w-36 h-52 md:w-44 md:h-64" : "w-28 h-40 md:w-36 md:h-52"}`}
+                />
+                {book.featured && (
+                  <div className="absolute inset-0 border-2 border-primary/30 rounded-lg" />
+                )}
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>
