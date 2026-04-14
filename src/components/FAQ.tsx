@@ -5,6 +5,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import bookMoneyHates from "@/assets/book-money-hates.jpg";
+import bookLastWitness from "@/assets/book-last-witness.jpg";
 
 const faqs = [
   {
@@ -59,8 +61,17 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section id="faq" className="py-24 px-6 bg-card">
-      <div className="max-w-3xl mx-auto">
+    <section id="faq" className="py-24 px-6 bg-card relative overflow-hidden">
+      {/* Decorative book backdrops */}
+      <div className="absolute top-16 -right-10 w-28 h-40 rounded-lg overflow-hidden opacity-[0.05] rotate-12">
+        <img src={bookMoneyHates} alt="" className="w-full h-full object-cover" />
+      </div>
+      <div className="absolute bottom-16 -left-8 w-24 h-36 rounded-lg overflow-hidden opacity-[0.05] -rotate-6">
+        <img src={bookLastWitness} alt="" className="w-full h-full object-cover" />
+      </div>
+      <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-primary/5 rounded-full blur-[120px]" />
+
+      <div className="relative max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

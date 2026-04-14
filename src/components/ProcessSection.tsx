@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { MessageSquare, PenTool, Palette, BookOpen, Megaphone } from "lucide-react";
+import bookEmpireDust from "@/assets/book-empire-dust-fire.jpg";
+import bookNotTwice from "@/assets/book-not-twice.jpg";
 
 const steps = [
   { icon: MessageSquare, step: "01", title: "Consultation", desc: "We discuss your vision, goals, and target audience to create a tailored publishing plan." },
@@ -14,8 +16,16 @@ export function ProcessSection() {
     <section className="py-24 px-6 bg-card relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+      {/* Decorative book covers as backdrop */}
+      <div className="absolute -right-16 top-12 w-32 h-48 rounded-lg overflow-hidden opacity-[0.07] rotate-12 blur-[1px]">
+        <img src={bookEmpireDust} alt="" className="w-full h-full object-cover" />
+      </div>
+      <div className="absolute -left-10 bottom-16 w-28 h-40 rounded-lg overflow-hidden opacity-[0.07] -rotate-12 blur-[1px]">
+        <img src={bookNotTwice} alt="" className="w-full h-full object-cover" />
+      </div>
+      <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-[100px]" />
 
-      <div className="max-w-7xl mx-auto">
+      <div className="relative max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
