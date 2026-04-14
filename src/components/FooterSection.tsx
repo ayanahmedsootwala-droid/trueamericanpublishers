@@ -1,6 +1,13 @@
 import logoMain from "@/assets/logo-main.png";
 import { BookOpen, Mail, Phone, MapPin, CreditCard } from "lucide-react";
 
+const genres = [
+  "Romance", "Sci-Fi", "Thriller", "Mystery", "Fantasy", "Horror",
+  "Finance", "Self-Help", "Memoir", "Business", "Health & Wellness",
+  "Motivation", "Drama", "Legal Thriller", "Dystopian", "Dark Fantasy",
+  "Young Adult", "Children's Books", "Poetry", "True Crime",
+];
+
 export function FooterSection() {
   return (
     <footer className="relative pt-20 pb-8 px-6 border-t border-border overflow-hidden">
@@ -61,6 +68,21 @@ export function FooterSection() {
                 <MapPin size={14} className="text-primary" /> New York, NY
               </span>
             </div>
+          </div>
+        </div>
+
+        {/* Genres We Work On */}
+        <div className="border-t border-border pt-8 mb-8">
+          <h4 className="text-foreground font-semibold mb-4 text-sm tracking-wider uppercase text-center">Genres We Work On</h4>
+          <div className="flex flex-wrap justify-center gap-2">
+            {genres.map((genre) => (
+              <span
+                key={genre}
+                className="px-3 py-1.5 text-xs rounded-full border border-border text-muted-foreground hover:border-primary/50 hover:text-primary gentle-animation cursor-default"
+              >
+                {genre}
+              </span>
+            ))}
           </div>
         </div>
 

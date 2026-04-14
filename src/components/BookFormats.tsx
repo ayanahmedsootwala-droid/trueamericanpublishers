@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 import { Tablet, BookOpen, BookMarked } from "lucide-react";
+import bookLoveNeverPlan from "@/assets/book-love-never-plan.jpg";
+import bookThirdDoor from "@/assets/book-third-door.jpg";
+import bookBloodDebts from "@/assets/book-blood-debts.jpg";
 
 const formats = [
   {
@@ -7,24 +10,30 @@ const formats = [
     title: "E-Book",
     description:
       "Reach millions of readers worldwide with a professionally formatted digital edition. Our e-books are optimized for Kindle, Apple Books, Google Play, and all major platforms. We ensure perfect typography, responsive layouts, and interactive table of contents for a seamless reading experience on any device — tablets, phones, or e-readers.",
+    bookCover: bookLoveNeverPlan,
   },
   {
     icon: BookOpen,
     title: "Paperback",
     description:
       "The classic, reader-favorite format. Our paperback editions feature premium paper stock, professional typesetting, and stunning cover design with spine and back cover. We handle trim sizing, bleed settings, and print-ready file preparation so your book meets the highest industry standards for Amazon KDP, IngramSpark, and bookstores.",
+    bookCover: bookThirdDoor,
   },
   {
     icon: BookMarked,
     title: "Hardcover",
     description:
       "Make a lasting impression with a premium hardcover edition. Ideal for coffee-table books, memoirs, and special collector's editions. Our hardcovers feature dust jackets, case laminate options, and archival-quality binding that stands the test of time. A hardcover instantly elevates your book's perceived value and shelf presence.",
+    bookCover: bookBloodDebts,
   },
 ];
 
 export function BookFormats() {
   return (
-    <section className="py-24 px-6 bg-card">
+    <section className="py-24 px-6 bg-card relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-primary/5 rounded-full blur-[120px]" />
+
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -48,9 +57,13 @@ export function BookFormats() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ y: -6, transition: { duration: 0.3 } }}
-              className="group p-8 rounded-xl border border-border bg-background hover:border-primary/50 gentle-animation"
+              className="group p-8 rounded-xl border border-border bg-background hover:border-primary/50 gentle-animation relative overflow-hidden"
             >
-              <div className="flex flex-col items-center text-center gap-4">
+              {/* Background book cover as subtle backdrop */}
+              <div className="absolute -bottom-4 -right-4 w-24 h-36 rounded-md overflow-hidden opacity-[0.06] rotate-6 group-hover:opacity-[0.12] gentle-animation">
+                <img src={fmt.bookCover} alt="" className="w-full h-full object-cover" />
+              </div>
+              <div className="relative flex flex-col items-center text-center gap-4">
                 <div className="w-14 h-14 rounded-lg red-gradient flex items-center justify-center flex-shrink-0 group-hover:scale-110 gentle-animation">
                   <fmt.icon size={26} className="text-primary-foreground" />
                 </div>
