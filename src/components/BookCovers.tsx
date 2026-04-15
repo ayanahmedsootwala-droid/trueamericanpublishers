@@ -2,27 +2,51 @@ import { motion } from "framer-motion";
 import Autoplay from "embla-carousel-autoplay";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import bookMidnightGarden from "@/assets/book-midnight-garden.jpg";
-import bookEchoesTomorrow from "@/assets/book-echoes-tomorrow.jpg";
-import bookManSoldTime from "@/assets/book-man-sold-time.jpg";
-import bookSilentMillions from "@/assets/book-silent-millions.jpg";
 import bookStillWaters from "@/assets/book-still-waters.jpg";
 import bookSpiceRoute from "@/assets/book-spice-route.jpg";
-import bookCrimsonHorizon from "@/assets/book-crimson-horizon.jpg";
 import bookPersonalFinanceTeens from "@/assets/book-personal-finance-teens.jpg";
 import bookLoveNeverPlan from "@/assets/book-love-never-plan.jpg";
 import bookBuiltSilence from "@/assets/book-built-silence.jpg";
+import bookAlgorithm from "@/assets/book-algorithm-owns-you.jpg";
+import bookNotTwice from "@/assets/book-not-twice.jpg";
+import bookMoneyHates from "@/assets/book-money-hates.jpg";
+import bookEmpireDust from "@/assets/book-empire-dust-fire.jpg";
 
-const books = [
+import bookThirdDoor from "@/assets/book-third-door.jpg";
+import bookLastWitness from "@/assets/book-last-witness.jpg";
+import bookBloodDebts from "@/assets/book-blood-debts.jpg";
+import bookWiredMore from "@/assets/book-wired-more.jpg";
+import bookLastCompass from "@/assets/book-last-compass.jpg";
+
+const carouselBooks = [
   { title: "The Midnight Garden", genre: "Gothic Mystery", cover: bookMidnightGarden },
-  { title: "Echoes of Tomorrow", genre: "Sci-Fi", cover: bookEchoesTomorrow },
-  { title: "The Man Who Sold Time", genre: "Sci-Fi", cover: bookManSoldTime },
-  { title: "Silent Millions", genre: "Finance Thriller", cover: bookSilentMillions },
   { title: "Beneath Still Waters", genre: "Thriller", cover: bookStillWaters },
   { title: "The Spice Route", genre: "Culinary Memoir", cover: bookSpiceRoute },
-  { title: "Crimson Horizon", genre: "Dystopian Thriller", cover: bookCrimsonHorizon },
   { title: "Personal Finance for Teens", genre: "Young Adult Finance", cover: bookPersonalFinanceTeens },
   { title: "Love Was Never the Plan", genre: "Romance", cover: bookLoveNeverPlan },
   { title: "Built in Silence", genre: "Motivation", cover: bookBuiltSilence },
+  { title: "The Algorithm Owns You", genre: "Tech Thriller", cover: bookAlgorithm },
+  { title: "Not Twice Before Dying", genre: "Mystery", cover: bookNotTwice },
+  { title: "Money Hates You", genre: "Finance", cover: bookMoneyHates },
+  { title: "Empire of the Dust and Fire", genre: "Dark Fantasy", cover: bookEmpireDust },
+];
+
+const categories = [
+  {
+    name: "Fiction",
+    books: [
+      { title: "Don't Open the Third Door", genre: "Horror", cover: bookThirdDoor },
+      { title: "The Last Witness Never Spoke", genre: "Crime Thriller", cover: bookLastWitness },
+      { title: "Blood Debts and Broken Oaths", genre: "Dark Fantasy", cover: bookBloodDebts },
+    ],
+  },
+  {
+    name: "Non-Fiction",
+    books: [
+      { title: "Wired for More", genre: "Self-Help", cover: bookWiredMore },
+      { title: "The Last Compass", genre: "Travel Memoir", cover: bookLastCompass },
+    ],
+  },
 ];
 
 export function BookCovers() {
@@ -48,6 +72,7 @@ export function BookCovers() {
           </p>
         </motion.div>
 
+        {/* Carousel - 10 books */}
         <div className="px-12">
           <Carousel
             opts={{ align: "start", loop: true }}
@@ -55,7 +80,7 @@ export function BookCovers() {
             className="w-full"
           >
             <CarouselContent className="-ml-4">
-              {books.map((book, i) => (
+              {carouselBooks.map((book, i) => (
                 <CarouselItem key={book.title} className="pl-4 basis-1/2 md:basis-1/4 lg:basis-1/5">
                   <motion.div
                     className="group cursor-pointer"
@@ -90,6 +115,50 @@ export function BookCovers() {
             <CarouselPrevious className="border-border text-foreground hover:bg-primary hover:text-primary-foreground" />
             <CarouselNext className="border-border text-foreground hover:bg-primary hover:text-primary-foreground" />
           </Carousel>
+        </div>
+
+        {/* Category sections - remaining 5 books */}
+        <div className="mt-20 space-y-14">
+          {categories.map((cat) => (
+            <motion.div
+              key={cat.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-display text-foreground mb-6">
+                <span className="red-text">{cat.name}</span>
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                {cat.books.map((book, i) => (
+                  <motion.div
+                    key={book.title}
+                    className="group cursor-pointer"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.08 }}
+                    whileHover={{ y: -8, scale: 1.03, transition: { duration: 0.3 } }}
+                  >
+                    <div className="relative aspect-[2/3] rounded-lg overflow-hidden shadow-lg group-hover:shadow-xl group-hover:shadow-primary/20 gentle-animation">
+                      <img
+                        src={book.cover}
+                        alt={`${book.title} book cover`}
+                        loading="lazy"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 gentle-animation flex items-end p-4">
+                        <div>
+                          <h3 className="font-display text-sm text-white leading-tight">{book.title}</h3>
+                          <p className="text-xs text-white/70 mt-1">{book.genre}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

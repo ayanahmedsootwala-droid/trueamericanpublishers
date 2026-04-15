@@ -1,10 +1,5 @@
 import { motion } from "framer-motion";
 import { Tablet, BookOpen, BookMarked } from "lucide-react";
-import bookLoveNeverPlan from "@/assets/book-love-never-plan.jpg";
-import bookThirdDoor from "@/assets/book-third-door.jpg";
-import bookBloodDebts from "@/assets/book-blood-debts.jpg";
-import bookEmpireDust from "@/assets/book-empire-dust-fire.jpg";
-import bookLastCompass from "@/assets/book-last-compass.jpg";
 
 const formats = [
   {
@@ -12,27 +7,19 @@ const formats = [
     title: "E-Book",
     description:
       "Reach millions of readers worldwide with a professionally formatted digital edition. Our e-books are optimized for Kindle, Apple Books, Google Play, and all major platforms.",
-    bookCover: bookLoveNeverPlan,
   },
   {
     icon: BookOpen,
     title: "Paperback",
     description:
       "The classic, reader-favorite format. Our paperback editions feature premium paper stock, professional typesetting, and stunning cover design with spine and back cover.",
-    bookCover: bookThirdDoor,
   },
   {
     icon: BookMarked,
     title: "Hardcover",
     description:
       "Make a lasting impression with a premium hardcover edition. Ideal for coffee-table books, memoirs, and special collector's editions with dust jackets and archival binding.",
-    bookCover: bookBloodDebts,
   },
-];
-
-const sideBooks = [
-  { src: bookEmpireDust, title: "Empire of the Dust and Fire" },
-  { src: bookLastCompass, title: "The Last Compass" },
 ];
 
 export function BookFormats() {
@@ -55,54 +42,26 @@ export function BookFormats() {
           </p>
         </motion.div>
 
-        <div className="flex gap-10">
-          {/* Side books - left */}
-          <div className="hidden xl:flex flex-col gap-4 w-28 flex-shrink-0 justify-center">
-            {sideBooks.map((book, i) => (
-              <motion.div
-                key={book.title}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 + i * 0.15 }}
-                whileHover={{ scale: 1.08, rotate: 2, transition: { duration: 0.3 } }}
-                className="group cursor-pointer"
-              >
-                <div className="relative aspect-[2/3] rounded-lg overflow-hidden shadow-lg group-hover:shadow-xl group-hover:shadow-primary/20 gentle-animation">
-                  <img src={book.src} alt={book.title} loading="lazy" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 gentle-animation flex items-end p-2">
-                    <span className="text-[10px] text-white font-medium leading-tight">{book.title}</span>
-                  </div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {formats.map((fmt, i) => (
+            <motion.div
+              key={fmt.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              whileHover={{ y: -6, transition: { duration: 0.3 } }}
+              className="group p-8 rounded-xl border border-border bg-background hover:border-primary/50 gentle-animation relative overflow-hidden"
+            >
+              <div className="relative flex flex-col items-center text-center gap-4">
+                <div className="w-14 h-14 rounded-lg red-gradient flex items-center justify-center flex-shrink-0 group-hover:scale-110 gentle-animation">
+                  <fmt.icon size={26} className="text-primary-foreground" />
                 </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Formats grid */}
-          <div className="flex-1 grid md:grid-cols-3 gap-8">
-            {formats.map((fmt, i) => (
-              <motion.div
-                key={fmt.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                whileHover={{ y: -6, transition: { duration: 0.3 } }}
-                className="group p-8 rounded-xl border border-border bg-background hover:border-primary/50 gentle-animation relative overflow-hidden"
-              >
-                <div className="absolute -bottom-4 -right-4 w-24 h-36 rounded-md overflow-hidden opacity-[0.06] rotate-6 group-hover:opacity-[0.12] gentle-animation">
-                  <img src={fmt.bookCover} alt="" className="w-full h-full object-cover" />
-                </div>
-                <div className="relative flex flex-col items-center text-center gap-4">
-                  <div className="w-14 h-14 rounded-lg red-gradient flex items-center justify-center flex-shrink-0 group-hover:scale-110 gentle-animation">
-                    <fmt.icon size={26} className="text-primary-foreground" />
-                  </div>
-                  <h3 className="text-xl font-display text-foreground">{fmt.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{fmt.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                <h3 className="text-xl font-display text-foreground">{fmt.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{fmt.description}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
