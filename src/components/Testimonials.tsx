@@ -1,8 +1,5 @@
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
-import bookSheNever from "@/assets/book-she-never-there.jpg";
-import bookIfWeNever from "@/assets/book-if-we-never-met.jpg";
-import bookAlgorithm from "@/assets/book-algorithm-owns-you.jpg";
 
 const testimonials = [
   {
@@ -58,16 +55,6 @@ const testimonials = [
 export function Testimonials() {
   return (
     <section id="testimonials" className="py-24 px-6 relative overflow-hidden">
-      {/* Decorative book covers as backdrop */}
-      <div className="absolute top-20 -right-8 w-28 h-40 rounded-lg overflow-hidden opacity-[0.06] rotate-12">
-        <img src={bookSheNever} alt="" className="w-full h-full object-cover" />
-      </div>
-      <div className="absolute bottom-20 -left-6 w-24 h-36 rounded-lg overflow-hidden opacity-[0.06] -rotate-6">
-        <img src={bookIfWeNever} alt="" className="w-full h-full object-cover" />
-      </div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-36 rounded-lg overflow-hidden opacity-[0.04] rotate-3">
-        <img src={bookAlgorithm} alt="" className="w-full h-full object-cover" />
-      </div>
       <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-[120px]" />
       <div className="absolute bottom-1/4 right-1/3 w-64 h-64 bg-primary/3 rounded-full blur-[100px]" />
 

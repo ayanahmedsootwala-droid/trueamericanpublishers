@@ -2,28 +2,22 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, BookOpen, Star, Sparkles } from "lucide-react";
 import { useRef } from "react";
 import logoMain from "@/assets/logo-main.png";
-import bookMidnight from "@/assets/book-midnight-garden.jpg";
+import bookSheNever from "@/assets/book-she-never-there.jpg";
 import bookEchoes from "@/assets/book-echoes-tomorrow.jpg";
 import bookManSoldTime from "@/assets/book-man-sold-time.jpg";
 import bookSilentMillions from "@/assets/book-silent-millions.jpg";
 import bookCrimson from "@/assets/book-crimson-horizon.jpg";
-import bookSheNever from "@/assets/book-she-never-there.jpg";
 import bookIfWeNever from "@/assets/book-if-we-never-met.jpg";
 import book2089 from "@/assets/book-2089.jpg";
 
 const heroBooks = [
-  { src: bookSheNever, title: "She Was Never There", rotate: -15, x: -80, delay: 0.1 },
-  { src: bookEchoes, title: "Echoes of Tomorrow", rotate: -10, x: -50, delay: 0.2 },
-  { src: bookMidnight, title: "The Midnight Garden", rotate: -5, x: -25, delay: 0.3 },
-  { src: bookManSoldTime, title: "The Man Who Sold Time", rotate: 0, x: 0, delay: 0.4, featured: true },
-  { src: bookSilentMillions, title: "Silent Millions", rotate: 5, x: 25, delay: 0.5 },
-  { src: bookCrimson, title: "Crimson Horizon", rotate: 10, x: 50, delay: 0.6 },
-  { src: book2089, title: "2089", rotate: 15, x: 80, delay: 0.7 },
-];
-
-const floatingBooks = [
-  { src: bookIfWeNever, top: "20%", left: "3%", size: "w-16 h-24", rotate: -15, delay: 0 },
-  { src: bookSheNever, top: "55%", right: "4%", size: "w-14 h-20", rotate: 12, delay: 1.5 },
+  { src: bookSheNever, title: "She Was Never There", rotate: -15, delay: 0.1 },
+  { src: bookEchoes, title: "Echoes of Tomorrow", rotate: -10, delay: 0.2 },
+  { src: bookManSoldTime, title: "The Man Who Sold Time", rotate: -5, delay: 0.3 },
+  { src: bookSilentMillions, title: "Silent Millions", rotate: 0, delay: 0.4, featured: true },
+  { src: bookCrimson, title: "Crimson Horizon", rotate: 5, delay: 0.5 },
+  { src: bookIfWeNever, title: "If We Never Met Again", rotate: 10, delay: 0.6 },
+  { src: book2089, title: "2089", rotate: 15, delay: 0.7 },
 ];
 
 export function HeroSection() {
@@ -60,19 +54,6 @@ export function HeroSection() {
           transition={{ duration: 4, repeat: Infinity, delay: spark.delay, ease: "easeInOut" }}
         >
           <Sparkles size={spark.size} />
-        </motion.div>
-      ))}
-
-      {/* Floating book covers in background */}
-      {floatingBooks.map((book, i) => (
-        <motion.div
-          key={i}
-          className={`absolute ${book.size} rounded-md overflow-hidden shadow-lg opacity-[0.12] hidden lg:block`}
-          style={{ top: book.top, left: book.left, right: book.right }}
-          animate={{ y: [0, -15, 0], rotate: [book.rotate, book.rotate + 3, book.rotate] }}
-          transition={{ duration: 6, repeat: Infinity, delay: book.delay, ease: "easeInOut" }}
-        >
-          <img src={book.src} alt="" className="w-full h-full object-cover" />
         </motion.div>
       ))}
 
@@ -139,7 +120,7 @@ export function HeroSection() {
           </div>
         </motion.div>
 
-        {/* Fan-spread book showcase — now with 7 books */}
+        {/* Fan-spread book showcase — 7 books */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
