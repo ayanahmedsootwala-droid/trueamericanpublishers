@@ -3,50 +3,26 @@ import Autoplay from "embla-carousel-autoplay";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import bookMidnightGarden from "@/assets/book-midnight-garden.jpg";
 import bookEchoesTomorrow from "@/assets/book-echoes-tomorrow.jpg";
-import bookLastCompass from "@/assets/book-last-compass.jpg";
 import bookManSoldTime from "@/assets/book-man-sold-time.jpg";
 import bookSilentMillions from "@/assets/book-silent-millions.jpg";
 import bookStillWaters from "@/assets/book-still-waters.jpg";
 import bookSpiceRoute from "@/assets/book-spice-route.jpg";
-import bookWiredMore from "@/assets/book-wired-more.jpg";
 import bookCrimsonHorizon from "@/assets/book-crimson-horizon.jpg";
 import bookPersonalFinanceTeens from "@/assets/book-personal-finance-teens.jpg";
 import bookLoveNeverPlan from "@/assets/book-love-never-plan.jpg";
 import bookBuiltSilence from "@/assets/book-built-silence.jpg";
-import bookAlgorithm from "@/assets/book-algorithm-owns-you.jpg";
-import bookNotTwice from "@/assets/book-not-twice.jpg";
-import bookMoneyHates from "@/assets/book-money-hates.jpg";
-import bookEmpireDust from "@/assets/book-empire-dust-fire.jpg";
-import bookSheNever from "@/assets/book-she-never-there.jpg";
-import bookIfWeNever from "@/assets/book-if-we-never-met.jpg";
-import bookLastWitness from "@/assets/book-last-witness.jpg";
-import bookThirdDoor from "@/assets/book-third-door.jpg";
-import book2089 from "@/assets/book-2089.jpg";
-import bookBloodDebts from "@/assets/book-blood-debts.jpg";
 
 const books = [
   { title: "The Midnight Garden", genre: "Gothic Mystery", cover: bookMidnightGarden },
   { title: "Echoes of Tomorrow", genre: "Sci-Fi", cover: bookEchoesTomorrow },
-  { title: "The Last Compass", genre: "Adventure Memoir", cover: bookLastCompass },
   { title: "The Man Who Sold Time", genre: "Sci-Fi", cover: bookManSoldTime },
   { title: "Silent Millions", genre: "Finance Thriller", cover: bookSilentMillions },
   { title: "Beneath Still Waters", genre: "Thriller", cover: bookStillWaters },
   { title: "The Spice Route", genre: "Culinary Memoir", cover: bookSpiceRoute },
-  { title: "Wired for More", genre: "Business & Tech", cover: bookWiredMore },
   { title: "Crimson Horizon", genre: "Dystopian Thriller", cover: bookCrimsonHorizon },
   { title: "Personal Finance for Teens", genre: "Young Adult Finance", cover: bookPersonalFinanceTeens },
   { title: "Love Was Never the Plan", genre: "Romance", cover: bookLoveNeverPlan },
   { title: "Built in Silence", genre: "Motivation", cover: bookBuiltSilence },
-  { title: "The Algorithm Owns You", genre: "Tech Thriller", cover: bookAlgorithm },
-  { title: "Not Twice Before Dying", genre: "Thriller", cover: bookNotTwice },
-  { title: "Money Hates You", genre: "Finance", cover: bookMoneyHates },
-  { title: "Empire of the Dust and Fire", genre: "Fantasy", cover: bookEmpireDust },
-  { title: "She Was Never There", genre: "Mystery", cover: bookSheNever },
-  { title: "If We Never Met Again", genre: "Drama", cover: bookIfWeNever },
-  { title: "The Last Witness Never Spoke", genre: "Legal Thriller", cover: bookLastWitness },
-  { title: "Don't Open the Third Door", genre: "Horror", cover: bookThirdDoor },
-  { title: "2089: The Year Humanity Sold Itself", genre: "Dystopian Sci-Fi", cover: book2089 },
-  { title: "Blood Debts and Broken Oaths", genre: "Dark Fantasy", cover: bookBloodDebts },
 ];
 
 export function BookCovers() {
@@ -63,7 +39,7 @@ export function BookCovers() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-medium tracking-widest uppercase">Our Library</span>
+          <span className="text-primary text-sm font-medium tracking-widest uppercase">Featured Books</span>
           <h2 className="mt-3 text-4xl md:text-5xl">
             Books We've Brought to <span className="red-text">Life</span>
           </h2>

@@ -3,9 +3,6 @@ import { BookOpen, Mail, Phone, MapPin, CreditCard } from "lucide-react";
 
 const genres = [
   "Romance", "Sci-Fi", "Thriller", "Mystery", "Fantasy", "Horror",
-  "Finance", "Self-Help", "Memoir", "Business", "Health & Wellness",
-  "Motivation", "Drama", "Legal Thriller", "Dystopian", "Dark Fantasy",
-  "Young Adult", "Children's Books", "Poetry", "True Crime",
 ];
 
 export function FooterSection() {
@@ -15,7 +12,7 @@ export function FooterSection() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/5 rounded-full blur-[120px]" />
 
       <div className="relative max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-12 mb-16">
+        <div className="grid md:grid-cols-5 gap-12 mb-16">
           {/* Brand */}
           <div className="md:col-span-1 space-y-4">
             <div className="flex items-center gap-3">
@@ -54,6 +51,18 @@ export function FooterSection() {
             </div>
           </div>
 
+          {/* Genres */}
+          <div>
+            <h4 className="text-foreground font-semibold mb-4 text-sm tracking-wider uppercase">Genres</h4>
+            <div className="flex flex-col gap-3">
+              {genres.map((genre) => (
+                <span key={genre} className="text-sm text-muted-foreground flex items-center gap-2">
+                  <BookOpen size={14} className="text-primary" /> {genre}
+                </span>
+              ))}
+            </div>
+          </div>
+
           {/* Contact */}
           <div>
             <h4 className="text-foreground font-semibold mb-4 text-sm tracking-wider uppercase">Contact Us</h4>
@@ -68,21 +77,6 @@ export function FooterSection() {
                 <MapPin size={14} className="text-primary" /> New York, NY
               </span>
             </div>
-          </div>
-        </div>
-
-        {/* Genres We Work On */}
-        <div className="border-t border-border pt-8 mb-8">
-          <h4 className="text-foreground font-semibold mb-4 text-sm tracking-wider uppercase text-center">Genres We Work On</h4>
-          <div className="flex flex-wrap justify-center gap-2">
-            {genres.map((genre) => (
-              <span
-                key={genre}
-                className="px-3 py-1.5 text-xs rounded-full border border-border text-muted-foreground hover:border-primary/50 hover:text-primary gentle-animation cursor-default"
-              >
-                {genre}
-              </span>
-            ))}
           </div>
         </div>
 
